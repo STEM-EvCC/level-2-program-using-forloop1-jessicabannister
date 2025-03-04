@@ -13,10 +13,11 @@ for i in range(len(mission_names)):
     if mission_success[i]:
         successful_missions +=1
     if mission_years[i]<2000:
-        #Concatenate the mission names to the string
+        
+        # Concatenate the mission names to the string
         if missions_before_2000:
-            missions_before_2000+=","
-            missions_before_2000+=mission_names[i]
+            missions_before_2000 += ","  # Add a comma before the next mission name
+        missions_before_2000 += mission_names[i]  # Keep the spaces
         #shorthand ???missions_before_2000.append(mission_names[i])
 #Calculate the success rate
 if total_missions >0:
@@ -27,4 +28,4 @@ else:
 print("Total number of space missions",total_missions)  
 print("Number of successful missions", successful_missions)
 print("Success rate of the missions:{:.2f}%".format(success_rate)) 
-print("Missions launched befor 2000:",''.join(missions_before_2000))     
+print("Missions launched befor 2000:",(missions_before_2000))     
